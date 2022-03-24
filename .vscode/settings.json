@@ -59,6 +59,10 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "bitset": "cpp"
-    }
+        "bitset": "cpp",
+        "condition_variable": "cpp"
+    },
+    "cSpell.words": [
+        "saio"
+    ]
 }
