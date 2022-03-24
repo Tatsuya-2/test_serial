@@ -1,0 +1,66 @@
+# ROS
+
+cmake-build-debug/
+cmake-build-debug/*
+CMakeFiles/
+CMakeFiles/*
+
+# *.a
+*.out
+*.o
+*.d
+*.dpp
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.pyc
+# Eclipse
+.project
+.classpath
+.settings
+
+# Idea
+.idea
+*.iml
+*.iws
+*.ipr
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Gradle
+.gradle
+!gradle-wrapper.jar
+
+# Maven
+target
+
+# Build
+/out
+/build
+/bin
+/install
+/log
+
+# Other
+*.log
+*.swp
+*.bak
+venv
+# .vscode/
+*.pyc
+x-special/nautilus-clipboard
+copy
+COLCON_IGNORE
+
+.coverage
+.coverage.*
+
+# AWS(KVS)のキーファイル
+kvs_keys.js
+# pytest
+unittest.xml
