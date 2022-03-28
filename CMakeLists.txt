@@ -8,14 +8,23 @@ set(CMAKE_CXX_EXTENSIONS OFF) #...without compiler extensions like gnu++11
 find_package(Threads REQUIRED)
 
 set(SRC
-    main.cpp
+    src/main.cpp
 )
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wno-long-long -pedantic")
 
+
+include_directories(lib/serialDevice)
+
+# link_directories(lib/serialDevice)
+
+add_library(serial STATIC lib/serialDevice/serial_device.cpp)
+
 ## Define the executable
-add_executable(test1 ${SRC})
-target_link_libraries(test1 Threads::Threads)
+add_executable(${PROJECT_NAME} ${SRC})
+target_link_libraries(${PROJECT_NAME}
+    Threads::Threads
+    serial)
 
 # set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 # set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

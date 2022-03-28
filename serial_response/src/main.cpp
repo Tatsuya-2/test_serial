@@ -31,16 +31,22 @@ void setup()
   inputString.reserve(200);
 }
 
+double i = 0.0;
+
 void loop()
 {
   // print the string when a newline arrives:
-  if (stringComplete)
-  {
-    Serial.println(inputString);
-    // clear the string:
-    inputString = "";
-    stringComplete = false;
-  }
+  // if (stringComplete)
+  // {
+  //   Serial.println("Return:" + inputString);
+  //   // clear the string:
+  //   inputString = "";
+  //   stringComplete = false;
+  // }
+
+  Serial.printf(">0.0,0.0,0.0,0.0,0.0,%f\n", i);
+  i += 0.001;
+  delay(33);
 }
 
 /*
@@ -48,19 +54,19 @@ void loop()
   routine is run between each time loop() runs, so using delay inside loop can
   delay response. Multiple bytes of data may be available.
 */
-void serialEvent()
-{
-  while (Serial.available())
-  {
-    // get the new byte:
-    char inChar = (char)Serial.read();
-    // add it to the inputString:
-    inputString += inChar;
-    // if the incoming character is a newline, set a flag so the main loop can
-    // do something about it:
-    if (inChar == '\n')
-    {
-      stringComplete = true;
-    }
-  }
-}
+// void serialEvent()
+// {
+//   while (Serial.available())
+//   {
+//     // get the new byte:
+//     char inChar = (char)Serial.read();
+//     // add it to the inputString:
+//     inputString += inChar;
+//     // if the incoming character is a newline, set a flag so the main loop can
+//     // do something about it:
+//     if (inChar == '\n')
+//     {
+//       stringComplete = true;
+//     }
+//   }
+// }
